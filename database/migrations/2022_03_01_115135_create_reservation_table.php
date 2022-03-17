@@ -19,7 +19,7 @@ class CreateReservationTable extends Migration
             $table->string('tel');
             $table->date('date');
             $table->time('heure');
-            $table->integer('personnes');
+            $table->integer('couverts');
             $table->text('commentaires');
             $table->boolean('confirmation')->nullable();
             $table->timestamps();
