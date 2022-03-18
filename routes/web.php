@@ -31,12 +31,13 @@ route::redirect('/foo', '/admin/reservation/create');
 route::redirect('/google', 'https://google.com');
 
 
-//**back office
-Route::get('/admin/reservation/edit', [ReservationController::class, 'edit'])->name('admin.reservation.edit');
-Route::put('/admin/reservation', [ReservationController::class, 'update'])->name('admin.reservation.update');
+// back office
 
-Route::get('/test', [MainController::class, 'test'])->name('main.test');
-Route::get('/test-resa', [MainController::class, 'testReservation'])->name('main.testResa');
+Route::get('/admin/reservation/create', [ReservationController::class, 'create'])->name('admin.reservation.create');
 
+Route::post('/admin/reservation', [ReservationController::class, 'store'])->name('admin.reservation.store');
 
+Route::get('/admin/reservation/{id}/edit', [ReservationController::class, 'edit'])->name('admin.reservation.edit');
+
+Route::put('/admin/reservation/{id}', [ReservationController::class, 'update'])->name('admin.reservation.update');
 
